@@ -8,6 +8,8 @@ The adoption of GPU computing has been a boon for computer vision and image proc
 
 Cell cycle is a series of events that a cell goes through in order to replicate it into two new daughter cells. There are two distinct phases of this process, namely interphase and mitosis. During interphase, a cell grows and doubles its DNA material by replicating and then during mitosis, the DNA material and other cellular organelles get equally distributed to two daughter cells.  
 
+![](docs/cell_cycle.jpg)
+
 The interphase can be subdivided into three stages: 
 
 * G1 Phase: The cell grows physically larger, copies organelles, and makes the molecular building blocks it will need in later steps. 
@@ -42,6 +44,8 @@ Our CNN model consists of the following layers:
 * A fully connected layer 
 * A dropout layer (0.03%) 
 * A softmax layer as output 
+
+![](docs/cnn_arch.jpg)
 
 We used a `binary cross-entropy` loss function and `Adam` optimizer from the `Keras` package to train the model.  
 We used 5 different sets of channel combinations to train the model and evaluate the predictions. These combinations are: 

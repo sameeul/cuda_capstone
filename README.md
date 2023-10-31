@@ -59,6 +59,15 @@ We trained each combination for 20 epoch and observed the loss and accuracy of e
 
 # Result 
 
+Here we can see the training history for various channel combination.
+
+![Hoechst Channel](docs/Hoechst_train_hist.png)
+![EB1 Channel](docs/EB1_train_hist.png)
+![GM130 Channel](docs/GM130_train_hist.png)
+![Hoechst + EB1 Channel](docs/Hoechst-EB1_train_hist.png)
+![Hoechst + GM130 Channel](docs/Hoechst-GM130_train_hist.png)
+
+
 The loss and accuracy of each combination after 20 epoch is given below: 
 
 | Channels        | Training Loss (%) | Training Accuracy (%) | Validation Loss (%) | Validation Accuracy (%) | Test Loss (%) | Test Accuracy (%) | 

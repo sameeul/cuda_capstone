@@ -1,5 +1,6 @@
 
 import os
+import argparse
 
 import tensorflow as tf
 from tensorflow import keras
@@ -134,21 +135,28 @@ def run_CNN(image_data_set, batch_size, epochs):
     model.evaluate(x_test,  y_test, batch_size=batch_size, verbose=2)
     
 if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser(description="Parses data_path, batch_size and epoch argument")
+    parser.add_argument("--data-path", help="Path to training data", required=True)
+    parser.add_argument("--batch-size", type=int, help="Size of each batch", required=True)
+    parser.add_argument("--epochs", type=int, help="Number of epochs to train the model", required=True)
     
-    batch_size = 64
-    epochs = 20
+    args = parser.parse_args()
+    data_path = args.data_path
+    batch_size = args.batch_size
+    epochs = args.epochs
     
-    Hoechst_image_data = ImageData("Hoechst", 1, 0, "/home/jovyan/work/cuda_capstone/HeLa_Hoechst-EB1/")
+    Hoechst_image_data = ImageData("Hoechst", 1, 0, data_path + "/HeLa_Hoechst-EB1/")
     run_CNN(Hoechst_image_data, batch_size, epochs)
     
-    EB1_image_data = ImageData("EB1", 1, 1, "/home/jovyan/work/cuda_capstone/HeLa_Hoechst-EB1/")
+    EB1_image_data = ImageData("EB1", 1, 1, data_path + "/HeLa_Hoechst-EB1/")
     run_CNN(EB1_image_data, batch_size, epochs)
     
-    Hoechst_EB1_image_data = ImageData("Hoechst-EB1", 2, 0, "/home/jovyan/work/cuda_capstone/HeLa_Hoechst-EB1/")
+    Hoechst_EB1_image_data = ImageData("Hoechst-EB1", 2, 0, data_path + "/HeLa_Hoechst-EB1/")
     run_CNN(Hoechst_EB1_image_data, batch_size, epochs)
     
-    GM130_image_data = ImageData("GM130", 1, 1, "/home/jovyan/work/cuda_capstone/HeLa_Hoechst-GM130/")
+    GM130_image_data = ImageData("GM130", 1, 1, data_path + "/HeLa_Hoechst-GM130/")
     run_CNN(GM130_image_data, batch_size, epochs)
         
-    Hoechst_GM130_image_data = ImageData("Hoechst-GM130", 2, 0, "/home/jovyan/work/cuda_capstone/HeLa_Hoechst-GM130/")
+    Hoechst_GM130_image_data = ImageData("Hoechst-GM130", 2, 0, data_path + "/HeLa_Hoechst-GM130/")
     run_CNN(Hoechst_GM130_image_data, batch_size, epochs)

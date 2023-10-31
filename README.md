@@ -1,6 +1,8 @@
 # Motivation 
 
-The adoption of GPU computing has been a boon for computer vision and image processing problems. Particularly, in deep learning domain, by enabling massively parallel computing, we can easily and quickly solve image classification problems. In this capstone project, we take inspiration from these ideas and solve an image classification problem (identifying cell cycle phase) using Tensorflow and CUDA CNN package. 
+The adoption of GPU computing has been a boon for computer vision and image processing problems. Particularly, in deep learning domain, by enabling massively parallel computing, we can easily and quickly solve image classification problems. In this capstone project, we take inspiration from these ideas and solve an image classification problem (identifying cell cycle phase) using `Tensorflow` and `CUDA CNN` package. 
+
+Instruction of how to execute the code and proof of execution is provided [here](#code-execution)
 
  
 
@@ -23,7 +25,7 @@ These changes in cellular structure can be captured via microscope and proper st
 
 # Data 
 
-We have used the image data from [Nagao Y _et al._](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7353138/) to train and test the model. The image data consists of the following staining channels: 
+We used the image data from [Nagao Y _et al._](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7353138/) to train and test the model. The image data consists of the following staining channels: 
 
 * Hoechst: This channel captures the DNA material present in a cell and can be used to differentiate between G1/S and G2 stages. 
 
@@ -92,5 +94,15 @@ However, combining Hoechst and GM130 provides the best prediction to differentia
 Nagao Y, Sakamoto M, Chinen T, Okada Y, Takao D. Robust classification of cell cycle phase and biological feature extraction by image-based deep learning. Mol Biol Cell. 2020 Jun 15;31(13):1346-1354. doi: 10.1091/mbc.E20-03-0187. Epub 2020 Apr 22. PMID: 32320349; PMCID: PMC7353138. 
 
  
+# Code Execution
+The data for the project can be downloaded from Zenodo using this [link](https://zenodo.org/records/3745864).
+We also need `Tensorflow` along with `CUDA` runtime installed in the environment so that `cudaCNN` library can be used within `Tensorflow`. The instruction to install `Tensorflow` along with `CUDA` support varies from OS to OS and the detail instruction can be found [here](https://www.tensorflow.org/install/pip).
 
- 
+Once the data files are downloaded and extracted, and placed in a directory, we can call the `Python` script to run the CNN models.
+```
+(base) jovyan $ python cuda_cnn_proj.py --data-path=/home/jovyan/work/cuda_capstone/ --batch-size=64 --epochs=20
+
+```
+The `data-path` argument points to the root path for all the training data folder. The `batch-size` argument dictates how many images will be processed in a single batch and the `epochs` parameter sets the number of epochs for the training.
+
+The output from a sample execution and the related graphs are stored [here](https://github.com/sameeul/cuda_capstone/tree/main/output) as a proof of execution.

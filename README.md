@@ -86,13 +86,6 @@ As we can see here, the Hoechst channel alone can provide a very good prediction
 The EB1 channel itself does not provide us with good predictions and combining this with Hoechst channel also does not improve the prediction by solo Hoechst channel.  
 
 However, combining Hoechst and GM130 provides the best prediction to differentiate between S/G1 and G2 stages. 
-
- 
-
-# Reference 
-
-Nagao Y, Sakamoto M, Chinen T, Okada Y, Takao D. Robust classification of cell cycle phase and biological feature extraction by image-based deep learning. Mol Biol Cell. 2020 Jun 15;31(13):1346-1354. doi: 10.1091/mbc.E20-03-0187. Epub 2020 Apr 22. PMID: 32320349; PMCID: PMC7353138. 
-
  
 # Code Execution
 The data for the project can be downloaded from Zenodo using this [link](https://zenodo.org/records/3745864).
@@ -106,3 +99,8 @@ Once the data files are downloaded and extracted, and placed in a directory, we 
 The `data-path` argument points to the root path for all the training data folder. The `batch-size` argument dictates how many images will be processed in a single batch and the `epochs` parameter sets the number of epochs for the training.
 
 The output from a sample execution and the related graphs are stored [here](https://github.com/sameeul/cuda_capstone/tree/main/output) as a proof of execution.
+
+# Reference 
+
+Nagao Y, Sakamoto M, Chinen T, Okada Y, Takao D. Robust classification of cell cycle phase and biological feature extraction by image-based deep learning. Mol Biol Cell. 2020 Jun 15;31(13):1346-1354. doi: 10.1091/mbc.E20-03-0187. Epub 2020 Apr 22. PMID: 32320349; PMCID: PMC7353138. 
+
